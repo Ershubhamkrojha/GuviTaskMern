@@ -31,7 +31,7 @@ const connect = async () => {
 app.use(express.urlencoded({extended : true}));
 app.use(express.json());
 app.use(cors({
-    origin:'http://localhost:3000'
+    origin:'process.env.path'
 }));
 app.use(cookieParser());
 app.use(express.json())
@@ -55,7 +55,7 @@ app.use((error, req, res, next) => {
 
 
 
-const port=process.env.port;
+const port=process.env.port||3000;
 
 app.listen(port,()=>{
     connect()
