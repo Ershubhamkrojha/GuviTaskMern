@@ -31,7 +31,7 @@ const connect = async () => {
 app.use(express.urlencoded({extended : true}));
 app.use(express.json());
 app.use(cors({
-    origin:'process.env.path'
+    origin:'${process.env.path}'
 }));
 app.use(cookieParser());
 app.use(express.json())
